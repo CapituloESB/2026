@@ -323,7 +323,7 @@ function rowHTML(day,it){
 function renderDay(day){
   const d = PROGRAM[day];
   $("#v-"+day).innerHTML = `<div class="day-head"><h2>${d.label}</h2><p class="sub">${d.date}</p></div>
-    <div class="day-links"><a class="btn" href="programa-resumen.jpg" target="_blank" rel="noopener">${PDFI}Programa resumido</a><a class="btn" href="${WEB_OFICIAL}" target="_blank" rel="noopener">${EXTI}Web oficial del congreso</a></div>
+    <div class="day-links"><a class="btn" href="programa-resumen.jpg" target="_blank" rel="noopener">${PDFI}Programa resumido</a></div>
     <div class="keys"><span><i style="background:var(--ses-par)"></i>Sesiones paralelas</span><span><i style="background:var(--ses-ple)"></i>Sesiones plenarias y ceremonias</span></div>
     <div class="list">${d.items.map(it=>rowHTML(day,it)).join("")}</div>`;
 }

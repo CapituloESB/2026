@@ -36,33 +36,34 @@ const ABSTRACTS_CARPETA = "abstracts/";
    Si cambias la imagen, ajusta las posiciones de las salas (en % de la imagen):
    x = distancia desde la izquierda, y = desde arriba, w = ancho, h = alto.  */
 const PLANOS = {
-  baja:  { nombre:"Planta baja", imagen:"planos/planta-baja.png", escalera:[61.4,23.7,3.1,10.9] },
-  menos1:{ nombre:"Planta −1",   imagen:"planos/planta-1.png",    escalera:[3.4,8.6,3.9,14.5] }
+  baja:  { nombre:"Planta baja", imagen:"planos/planta-baja.png", escalera:[61.0,23.0,3.2,11.1] },
+  menos1:{ nombre:"Planta −1",   imagen:"planos/planta-1.png",    escalera:[3.3,5.2,4.1,15.6] }
 };
 
 /* ---------- SALAS ---------- */
 const ROOMS = {
-  registro:{ plano:"baja",   name:"Registro",          pos:[45.1,71.8,6.4,8.1],   hint:"Planta baja. Al entrar, a la derecha, junto a la Sala d'Actes." },
-  capella: { plano:"baja",   name:"Aula Capella",      pos:[78.0,69.3,15.7,12.3], hint:"Planta baja. Al fondo, pasada la Sala d'Actes." },
-  actes:   { plano:"baja",   name:"Sala d'Actes",      pos:[48.6,69.3,29.4,12.3], hint:"Planta baja, junto al Registro." },
-  hall:    { plano:"baja",   name:"Hall · Entrada",    pos:[29.8,78.8,12.5,8.4],  hint:"Planta baja, entrada principal del edificio." },
-  enginy:  { plano:"baja",   name:"Plaça de l'Enginy", pos:[33.9,39.5,30.2,25.1], hint:"Planta baja, en el centro del edificio." },
-  engilab: { plano:"baja",   name:"EngiLab",           pos:[10.2,21.1,17.3,13.7], hint:"Planta baja, ala izquierda." },
-  ls2:     { plano:"menos1", name:"Aula LS2",          pos:[41.7,42.4,11.3,18.6], hint:"Planta −1. Baja por la escalera junto a la Plaça de l'Enginy." },
-  ls15:    { plano:"menos1", name:"Aula LS15",         pos:[81.1,41.4,16.6,10.3], hint:"Planta −1. Baja por la escalera junto a la Plaça de l'Enginy; al fondo a la derecha." },
-  ls16:    { plano:"menos1", name:"Aula LS16",         pos:[81.1,51.7,16.6,10.3], hint:"Planta −1. Baja por la escalera junto a la Plaça de l'Enginy; al fondo a la derecha." }
+  registro:{ plano:"baja",   name:"Registro",          pos:[43.6,71.8,7.2,8.0],   hint:"Planta baja. Al entrar, a la derecha, junto a la Sala d'Actes." },
+  capella: { plano:"baja",   name:"Aula Capella",      pos:[78.4,69.3,15.4,12.5], hint:"Planta baja. Al fondo, pasada la Sala d'Actes." },
+  actes:   { plano:"baja",   name:"Sala d'Actes",      pos:[47.6,69.3,30.6,12.5], hint:"Planta baja, junto al Registro." },
+  hall:    { plano:"baja",   name:"Hall · Entrada",    pos:[28.4,80.5,12.8,7.0],  hint:"Planta baja, entrada principal del edificio." },
+  enginy:  { plano:"baja",   name:"Plaça de l'Enginy", pos:[32.6,39.2,30.8,25.3], hint:"Planta baja, en el centro del edificio." },
+  cafe:    { plano:"baja",   name:"Pausa café · Coffee break", pos:[62.8,82.1,30.6,5.2], hint:"Planta baja, en el pasillo delante del Aula Capella y la Sala d'Actes." },
+  engilab: { plano:"baja",   name:"EngiLab",           pos:[8.0,20.9,17.6,14.3], hint:"Planta baja, ala izquierda." },
+  ls2:     { plano:"menos1", name:"Aula LS2",          pos:[42.2,41.7,10.9,18.1], hint:"Planta −1. Baja por la escalera junto a la Plaça de l'Enginy." },
+  ls15:    { plano:"menos1", name:"Aula LS15",         pos:[81.7,39.2,16.6,11.1], hint:"Planta −1. Baja por la escalera junto a la Plaça de l'Enginy; al fondo a la derecha." },
+  ls16:    { plano:"menos1", name:"Aula LS16",         pos:[81.7,50.3,16.6,10.4], hint:"Planta −1. Baja por la escalera junto a la Plaça de l'Enginy; al fondo a la derecha." }
 };
 /* Salas que salen como botones encima del plano */
-const ROOMS_LEGEND = ["registro","capella","ls2","ls15","ls16","actes","hall"];
+const ROOMS_LEGEND = ["registro","actes","capella","ls2","ls15","ls16","cafe","hall"];
 
 /* Color de cada sala en las sesiones paralelas */
 const ROOM_COLOR = { capella:"#0A6B6E", ls2:"#13A39C", ls15:"#3473B8", ls16:"#B8507A" };
 
 /* ---------- LUGARES FUERA DEL EDIFICIO (abren Google Maps) ---------- */
 const EXT = {
-  fme:   { name:"Facultat de Matemàtiques i Estadística (FME-UPC)", addr:"C/ de Pau Gargallo, 14, Barcelona" },
   polo:  { name:"Real Club de Polo de Barcelona", addr:"Av. del Doctor Marañón, 19-31, Barcelona" },
-  etseib:{ name:"ETSEIB · Escuela Técnica Superior de Ingeniería Industrial de Barcelona", addr:"Av. Diagonal, 647, Barcelona" }
+  etseib:{ name:"ETSEIB · Escuela Técnica Superior de Ingeniería Industrial de Barcelona", addr:"Av. Diagonal, 647, Barcelona" },
+  pedralbes:{ name:"Puerta principal de los Jardines del Palau Reial de Pedralbes", addr:"A la altura del metro Palau Reial (L3) · Punto de encuentro de la visita turística", url:"https://maps.app.goo.gl/dVQsbEdvh6GiA4uY7" }
 };
 
 /* ---------- PROGRAMA ----------
@@ -79,10 +80,10 @@ const I = (id,start,end,kind,title,o={}) => Object.assign({id,start,end,kind,tit
 
 const PROGRAM = {
  jueves:{ label:"Jueves 29", date:"29 de octubre de 2026", items:[
-  I("j0","09:30","10:00","general","Recepción de los participantes",{block:"Mañana · Experiencias prácticas y demostraciones",room:"hall",meta:"Hall de la ETSEIB"}),
-  I("j1","10:00","11:15","general","LABORA y Able Human Motion",{ext:"fme",meta:"Presentación del laboratorio LABORA y demostración práctica del exoesqueleto de Able Human Motion"}),
-  I("j2","11:30","12:00","general","IRIS y Xartec Salut",{ext:"etseib",meta:"Presentación del IRIS-UPC y de la red Xartec Salut"}),
-  I("j3","12:00","13:00","general","Visita a los laboratorios BIOMEC, BIOART e IOC",{meta:"Los participantes se reparten en tres grupos con visitas rotativas"}),
+  I("j0","09:30","10:00","general","Recepción de los participantes",{block:"Mañana · Experiencias prácticas y demostraciones",room:"hall",meta:"Punto de encuentro: Hall de entrada de la ETSEIB"}),
+  I("j1","10:00","11:15","general","LABORA y Able Human Motion",{room:"hall",meta:"Presentación del laboratorio LABORA y demostración práctica del exoesqueleto de Able Human Motion. Punto de encuentro: Hall de entrada de la ETSEIB; desde allí os guiaremos."}),
+  I("j2","11:30","12:00","general","IRIS y Xartec Salut",{room:"hall",meta:"Presentación del IRIS-UPC y de la red Xartec Salut. Punto de encuentro: Hall de entrada de la ETSEIB; desde allí os guiaremos."}),
+  I("j3","12:00","13:00","general","Visita a los laboratorios BIOMEC, BIOART e IOC",{room:"hall",meta:"Visitas rotativas en tres grupos. Punto de encuentro: Hall de entrada de la ETSEIB; desde allí os guiaremos."}),
   I("j4","14:00","15:00","general","Registro de participantes",{block:"Tarde · Sesión inaugural e inicio del congreso",room:"registro"}),
   I("j5","14:30","15:00","session","Ceremonia de apertura",{tracks:[T("APER","Intervienen","actes","",`
 |Núria Montserrat Pulido|Honorable Consejera de Investigación y Universidades de la Generalitat de Catalunya
@@ -120,7 +121,7 @@ const PROGRAM = {
 141125|Implementation and Evaluation of AI-Assisted, Digitally Designed and 3D-Printed Transtibial Prosthetic Sockets in The Gambia|Daniela van-Wieringen-Massanet; Momodou Jallow; Iris Sterkenburg; Merel Van-der-Stelt; Matt Thomson; Chistopher Vandy; Lucy Gates
 141150|Base de datos CLAMP para el análisis de la postura de la mano durante el proceso de agarre|M. C. Mora; N. H. S. Al-Owaidi; B. Pellicer-Coves; J. V. García-Ortiz; J. Cerdá-Boluda`)
   ]}),
-  I("j8","17:15","17:45","break","Pausa café"),
+  I("j8","17:15","17:45","break","Pausa café",{room:"cafe"}),
   I("j9","17:45","19:15","parallel","Sesiones científicas paralelas II",{tracks:[
    T("COMP1","Caracterización experimental y propiedades biomecánicas de tejidos","capella","Moderadora: María José Rupérez",`
 139096|Caracterización estadística de las propiedades mecánicas del tejido pericárdico mediante ensayos de tracción uniaxial|Irea López-García; Sofía Suárez; José Ángel López-Campos; Abraham Segade
@@ -134,7 +135,7 @@ const PROGRAM = {
 141014|Towards a portable multimodal laboratory for gait and physiological assessment in neurological gait disorders|Aroa Ballesteros-Sopena; Josep M. Font-Llagunes; Rosa Pàmies-Vilà
 139968|Preliminary Evaluation of IMU-Based Gait Event Detection Algorithms for Rehabilitation-Oriented Gait Assessment|Angela Apicella; Josep M. Font-Llagunes; Rosa Pàmies-Vilà
 140017|Estudio preliminar de la usabilidad de OpenCap® en el análisis de la marcha humana con dispositivos de asistencia|Valeriano Sánchez-Jimenez; Alejandro Peña-Trabalon; Salvador Moreno-Vegas; M. Belen Estebanez Campos; Fernando Nadal-Martinez; Ana Perez-Blanca; Maria Prado-Novoa`),
-   T("CLIN1","Tecnologías y metodologías para el análisis del movimiento","ls15","Moderador: Antonio Rodríguez Fernández",`
+   T("CLIN2","Rehabilitación robótica, exoesqueletos y asistencia al movimiento","ls15","Moderador: Antonio Rodríguez Fernández",`
 139856|Robotic Technologies for the Objective Assessment of Spasticity: A Systematic Review|Laia Yébenes-Serra; Josep M. Font-Llagunes; Massimo Cenciarini
 139904|SPAST-SENSE: A Human-Centered Wearable Robotic Exoskeleton for Objective Assessment of Post-Stroke Spasticity|Massimo Cenciarini; Laia Yébenes-Serra; Josep M. Font-Llagunes
 139826|Real-world use of a personal wearable exoskeleton in individuals with spinal cord injury|Maria Artigas Trayter; Clara Roig Rabadá; Erika Porra-Martínez; C. Beatriz Samitier Pastor; Antonio Rodríguez-Fernández
@@ -155,7 +156,7 @@ const PROGRAM = {
  viernes:{ label:"Viernes 30", date:"30 de octubre de 2026", items:[
   I("v0","08:30","09:00","general","Registro de participantes",{room:"registro"}),
   I("v1","09:00","10:30","parallel","Sesiones científicas paralelas III",{tracks:[
-   T("COMP2","Modelización musculoesquelética, simulación predictiva y gemelos digitales","capella","Moderador: por confirmar",`
+   T("COMP2","Modelización musculoesquelética, simulación predictiva y gemelos digitales","capella","Moderador: Simone Tassani",`
 139919|Personalizing motor control in predictive gait simulations of children with cerebral palsy using muscle synergies|Marc Verdaguer; Míriam Febrer-Nafría
 139965|Pronounced deviation from healthy gait ankle kinematics leads to an increase in knee joint loads|Andrea Quesada Ros; Seyyed Hamed Hosseini Nasab; Míriam Febrer Nafría
 140003|Physics-based vs surrogate contact pressure models for musculoskeletal simulation|Makram Jraifi; Mohanad Harba; Emilia Agostini; Leia Daragnes; Jordi Torner; Gil Serrancolí
@@ -169,13 +170,13 @@ const PROGRAM = {
 139889|Adaptaciones cinemáticas del tren superior durante la marcha sobre terrenos ecológicos|Adriana Torres-Pardo; Irem Akgün; Carlota Trigo; Francisco Molina-Rueda; Tuba Maden; Diego Torricelli
 139914|Influence of Visual, Proprioceptive, and Footwear Alterations on Center-of-Mass Stabilization During Perturbed Standing Balance|Pilar I. Maldonado-Muñoz; Sejin Yi-Yoo; Míriam Febrer-Nafría; Cristina Bayón
 139956|Medida del equilibrio en pacientes con ictus mediante la plataforma OREKA|Ruben Valenzuela; Javier Corral; Mikel Diez; Francisco J. Campa; Saioa Herrero; Erik Macho; Charles Pinto`),
-   T("FLU2","Remodelado, caracterización y mecanobiología de tejidos","ls15","Moderador: Eugenio Giner Maravilla",`
+   T("FLU2","Modelado multiescala, hemodinámica y mecanobiología cardiovascular","ls15","Moderador: Lluïsa Jordi Nebot",`
 139989|Patient-Specific Computational Modeling of Aortic Dual Circulation in Harlequin Syndrome During Peripheral VA-ECMO|Michele Nigro; Eduardo Soudah
 139991|Uncovering mechanobiological drivers of foam cell formation via integrated agent-based and explainable machine learning|Mané Sarkissian; Vasileios Vavourakis; Jerome Noailly
 139997|Adhesion & dwell-time gate NLRP3 priming & assembly in monocytes: a coupled multiscale CFD-ABM study|V. V. S. Varaprasad Jakka; Mané Sarkissian; Yalemzerf M. Alemu; Jérôme Noailly
 140732|Análisis computacional de la administración de fármacos por vía inhalatoria en pacientes con estenosis traqueal y stents|Mauro Malvè; Carmen Sánchez-Matás; José Luis López-Villalobos; Rocío Fernández-Parra
 141149|A Multiscale 0D–1D Model of Valveless Pumping for Biomedical Applications|Erfan Vaezi; Joaquin A. Hernández; Eduardo Soudah`),
-   T("TEJ2","Análisis del movimiento, equilibrio y control motor","ls16","Moderadora: María Ángeles Pérez Ansón",`
+   T("TEJ2","Mecanobiología celular, monocapas y microambiente","ls16","Moderadora: María Ángeles Pérez Ansón",`
 139451|Reorganización de las tensiones celulares en monocapas durante la proliferación|Raul Aparicio-Yuste; Lara Hundsdorfer; Effie Bastounis; María José Gómez-Benito
 139839|A bone remodelling model including calcium-phosphorus homeòstasis|Javier Martínez Reina; José Luis Calvo Gallego; Rocío Ruiz Lozano; Peter Pivonka; Ralph Müller
 139750|Computational Assessment of Oxygen Availability and Hydrodynamic Shear Stress for Optimized Cell Adhesion in SU-8 Microchambers|M. Poursaberi; G. Hauke; S. J. Mousavi; M. H. Doweidar
@@ -186,7 +187,7 @@ const PROGRAM = {
   I("v2","10:30","11:30","session","Mesas redondas",{tracks:[T("MESA","Dos mesas redondas","capella","",`
 |Competición universitaria de manos protésicas: del aula al reto tecnológico||Estudiantes de grado y máster diseñan prototipos de manos protésicas en proyectos académicos. Diálogo sobre retos de diseño, soluciones propuestas y el valor de estas experiencias en la formación de ingenieros.
 |Women in Biomechanics: visibilidad y liderazgo femenino en biomecánica||Presentación de la asociación Women in Biomechanics y debate abierto sobre participación y liderazgo femenino en la biomecánica.`)]}),
-  I("v3","11:30","12:00","break","Pausa café"),
+  I("v3","11:30","12:00","break","Pausa café",{room:"cafe"}),
   I("v4","12:00","13:30","parallel","Sesiones científicas paralelas IV",{tracks:[
    T("COMP3","Modelización computacional y métodos numéricos en biomecánica","capella","Moderador: Javier Martínez Reina",`
 139832|Crecimiento de órganos: algoritmo basado en elementos finitos con aplicación al modelado óseo|Jose Luis Calvo Gallego; Pablo Manchado Morales; Peter Pivonka; Javier Martinez Reina
@@ -206,18 +207,18 @@ const PROGRAM = {
 139938|Prótesis de mano mecánica de bajo coste que completa con éxito todas las tareas de la II Competición universitaria de Manos Protésicas|Abel Hida Louafi; Miguel Martínez Collado; Mehdi Briki Boulissia; David Mayol Pastor; Anthony Haro Penalva; Immaculada Llop Harillo
 139988|Diseño, identificación dinámica y filtro de Kalman para una prótesis de mano subactuada de bajo coste con arnés electrónico|Miguel Martínez Collado; Immaculada Llop Harillo; Raúl Ortiz Cárdenas; José Vicente García Ortiz
 141002|Evaluación cinemática de exoesqueletos de mano mediante seguimiento electromagnético del movimiento|Raquel Lázaro; Elvira Castro; Néstor José Jarque-Bou; Margarita Vergara; Verónica Gracia
-141003|GrowHand: Diseño de juego interactivo modular basado en agarres funcionales para rehabilitación de la mano|María Almela Nácher Castro; Jon Andoni Fernández Moyano; Verónica Gracia-Ibáñez
+141003|GrowHand: Diseño de juego interactivo modular basado en agarres funcionales para rehabilitación de la mano|María Almela Nácher; Jon Andoni Fernández Moyano; Verónica Gracia-Ibáñez
 141007|Procedimiento de evaluación de la vida a fatiga de una prótesis torácica dinámica de Ti-6Al-4V mediante captura de movimiento como condición de contorno|Sofía Suárez; José Ángel López-Campos; Irea López-García; Abraham Segade
 141037|Diseño y validación biomecánica de una prótesis transtibial personalizable y de bajo coste optimizada para fabricación aditiva|Marcos Carramiñana Gracia; Carlos Contreras Laguía; Ramiro Mantecón`)
   ]}),
-  I("v5","13:30","14:45","session","Sesión de premiados",{tracks:[T("PREM","Trabajos seleccionados para los premios","capella","Moderadores: María José Gómez, Carlos Ruiz Willis",`
+  I("v5","13:30","14:45","session","Sesión de premiados",{tracks:[T("PREM","Trabajos seleccionados para los premios","capella","Moderadores: María José Gómez, Carlos Ruiz Wills",`
 139955|Stance-phase kinematic phenotyping is associated with patient-reported function in moderate knee osteoarthritis|Mayra Loayza; Gil Serrancolí; Gemma Piella; Jérôme Noailly
 140016|Desarrollo y validación de un protocolo in vitro para la caracterización biomecánica de unidades vertebrales en especímenes polisegmentarios|Salvador Moreno; Gema Rico; Alejandro Peña; Francisco García; Ana Pérez de la Blanca; Belen Estebanez; María Prado
 139969|MRI-based inverse finite element characterization of ascending aortic aneurysms using Bayesian optimization|David Alcaraz; Gaia Caruso; Andrea Guala; Lydia Dux-Santoy; Gisela Teixidó-Turá; José F. Rodríguez-Palomares; Miguel A. Martínez; Estefanía Peña
 140014|Desarrollo y validación mecánica de modelos craneales impresos en 3D para craneoplastia asistida por resortes|E. Jorge Cuñado; L. Smith; S. Schievano; A. Borghi; B. Garate Andikoetxea; Jia-en Chen
 139996|Validation of the kinematic and dynamic accuracy of a depth-camera-based telerehabilitation System|Sergi Riera; Mireia Beringues; Carles Margelí; Mohanad Harba; Jordi Torner; Gil Serrancolí`)]}),
   I("v6","14:50","15:00","plenary","Ceremonia de clausura",{room:"capella"}),
-  I("v7","15:00","16:30","break","Almuerzo",{open:true}),
-  I("v8","18:00","20:00","general","Visita turística",{open:true})
+  I("v7","15:00","16:30","break","Almuerzo de clausura",{open:true,meta:"Lugar por determinar: se anunciará el mismo día. Sigue las indicaciones que encontrarás en la universidad."}),
+  I("v8","17:00","19:00","general","Visita turística",{open:true,ext:"pedralbes",meta:"Punto de encuentro: delante de la puerta principal de los Jardines del Palau Reial de Pedralbes, a la altura del metro Palau Reial (L3)."})
  ]}
 };

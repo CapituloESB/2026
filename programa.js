@@ -80,11 +80,11 @@ const I = (id,start,end,kind,title,o={}) => Object.assign({id,start,end,kind,tit
 
 const PROGRAM = {
  jueves:{ label:"Jueves 29", date:"29 de octubre de 2026", items:[
-  I("j0","09:30","10:00","general","Recepción de los participantes",{block:"Mañana · Experiencias prácticas y demostraciones",room:"hall",meta:"Punto de encuentro: Hall de entrada de la ETSEIB"}),
+  I("j0","09:30","10:00","general","Recepción de los participantes",{block:"Experiencias prácticas · Mañana · Demostraciones y visitas a laboratorios",room:"hall",meta:"Punto de encuentro: Hall de entrada de la ETSEIB"}),
   I("j1","10:00","11:15","general","LABORA y Able Human Motion",{room:"hall",meta:"Presentación del laboratorio LABORA y demostración práctica del exoesqueleto de Able Human Motion. Punto de encuentro: Hall de entrada de la ETSEIB; desde allí os guiaremos."}),
   I("j2","11:30","12:00","general","IRIS y Xartec Salut",{room:"hall",meta:"Presentación del IRIS-UPC y de la red Xartec Salut. Punto de encuentro: Hall de entrada de la ETSEIB; desde allí os guiaremos."}),
   I("j3","12:00","13:00","general","Visita a los laboratorios BIOMEC, BIOART e IOC",{room:"hall",meta:"Visitas rotativas en tres grupos. Punto de encuentro: Hall de entrada de la ETSEIB; desde allí os guiaremos."}),
-  I("j4","14:00","15:00","general","Registro de participantes",{block:"Tarde · Sesión inaugural e inicio del congreso",room:"registro"}),
+  I("j4","14:00","15:00","general","Registro de participantes",{block:"Inauguración del congreso · Tarde · Apertura, conferencia plenaria y sesiones paralelas",room:"registro"}),
   I("j5","14:30","15:00","session","Ceremonia de apertura",{tracks:[T("APER","Intervienen","actes","",`
 |Núria Montserrat Pulido|Honorable Consejera de Investigación y Universidades de la Generalitat de Catalunya
 |Jordi Romeu Garbi|Vicerrector de Política de Personal Docente e Investigador (UPC)
@@ -154,7 +154,7 @@ const PROGRAM = {
   I("j11","20:30","23:00","general","Encuentro de networking",{ext:"polo"})
  ]},
  viernes:{ label:"Viernes 30", date:"30 de octubre de 2026", items:[
-  I("v0","08:30","09:00","general","Registro de participantes",{room:"registro"}),
+  I("v0","08:30","09:00","general","Registro de participantes",{block:"Sesiones científicas y clausura · Mañana · Sesiones paralelas, mesa redonda, premios y clausura",room:"registro"}),
   I("v1","09:00","10:30","parallel","Sesiones científicas paralelas III",{tracks:[
    T("COMP2","Modelización musculoesquelética, simulación predictiva y gemelos digitales","capella","Moderador: Simone Tassani",`
 139919|Personalizing motor control in predictive gait simulations of children with cerebral palsy using muscle synergies|Marc Verdaguer; Míriam Febrer-Nafría

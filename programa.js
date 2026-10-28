@@ -212,9 +212,9 @@ const PROGRAM = {
   ]}),
   I("v5","13:30","14:45","session","Sesión de premiados",{tracks:[T("PREM","Trabajos seleccionados para los premios","capella","Moderadores: María José Gómez Benito, Carlos Ruiz Wills",`
 139832|Crecimiento de órganos: algoritmo basado en elementos finitos con aplicación al modelado óseo|Jose Luis Calvo Gallego; Pablo Manchado Morales; Peter Pivonka; Javier Martínez Reina
+139955|Stance-phase kinematic phenotyping is associated with patient-reported function in moderate knee osteoarthritis|Mayra Loayza; Gil Serrancolí; Gemma Piella; Jérôme Noailly
 140016|Desarrollo y validación de un protocolo in vitro para la caracterización biomecánica de unidades vertebrales en especímenes polisegmentarios|Salvador Moreno; Gema Rico; Alejandro Peña; Francisco García; Ana Pérez de la Blanca; Belen Estebanez; María Prado
 139969|MRI-based inverse finite element characterization of ascending aortic aneurysms using Bayesian optimization|David Alcaraz; Gaia Caruso; Andrea Guala; Lydia Dux-Santoy; Gisela Teixidó-Turá; José F. Rodríguez-Palomares; Miguel A. Martínez; Estefanía Peña
-140014|Desarrollo y validación mecánica de modelos craneales impresos en 3D para craneoplastia asistida por resortes|E. Jorge Cuñado; L. Smith; S. Schievano; A. Borghi; B. Garate Andikoetxea; Jia-en Chen
 139996|Validation of the kinematic and dynamic accuracy of a depth-camera-based telerehabilitation System|Sergi Riera; Mireia Beringues; Carles Margelí; Mohanad Harba; Jordi Torner; Gil Serrancolí`)]}),
   I("v6","14:50","15:00","plenary","Ceremonia de clausura",{room:"capella"}),
   I("v7","15:00","16:30","break","Almuerzo de clausura",{open:true,meta:"Lugar por determinar: se anunciará el mismo día. Sigue las indicaciones que encontrarás en la universidad."}),

@@ -46,7 +46,7 @@ const ROOMS = {
   capella: { plano:"baja",   name:"Aula Capella",      pos:[78.4,69.3,15.4,12.5], hint:"Planta baja. Al fondo, pasada la Sala d'Actes." },
   actes:   { plano:"baja",   name:"Sala d'Actes",      pos:[47.6,69.3,30.6,12.5], hint:"Planta baja, junto al Registro." },
   hall:    { plano:"baja",   name:"Hall · Entrada",    pos:[28.4,80.5,12.8,7.0],  hint:"Planta baja, entrada principal del edificio." },
-  enginy:  { plano:"baja",   name:"Plaça de l'Enginy", pos:[32.6,39.2,30.8,25.3], hint:"Planta baja, en el centro del edificio." },
+  enginy:  { plano:"baja",   name:"Plaça de l'Enginy", pos:[32.6,39.2,30.8,25.3], hint:"Planta baja, en el centro del edificio. Aquí se sirve el almuerzo de clausura del viernes." },
   cafe:    { plano:"baja",   name:"Pausa café · Coffee break", pos:[62.8,82.1,30.6,5.2], hint:"Planta baja, en el pasillo delante del Aula Capella y la Sala d'Actes." },
   engilab: { plano:"baja",   name:"EngiLab",           pos:[8.0,20.9,17.6,14.3], hint:"Planta baja, ala izquierda." },
   ls2:     { plano:"menos1", name:"Aula LS2",          pos:[42.2,41.7,10.9,18.1], hint:"Planta −1. Baja por la escalera junto a la Plaça de l'Enginy." },
@@ -54,7 +54,7 @@ const ROOMS = {
   ls16:    { plano:"menos1", name:"Aula LS16",         pos:[81.7,50.3,16.6,10.4], hint:"Planta −1. Baja por la escalera junto a la Plaça de l'Enginy; al fondo a la derecha." }
 };
 /* Salas que salen como botones encima del plano */
-const ROOMS_LEGEND = ["registro","actes","capella","ls2","ls15","ls16","cafe","hall"];
+const ROOMS_LEGEND = ["registro","actes","capella","ls2","ls15","ls16","cafe","enginy","hall"];
 
 /* Color de cada sala en las sesiones paralelas */
 const ROOM_COLOR = { capella:"#0A6B6E", ls2:"#13A39C", ls15:"#3473B8", ls16:"#B8507A" };
@@ -217,7 +217,7 @@ const PROGRAM = {
 139969|MRI-based inverse finite element characterization of ascending aortic aneurysms using Bayesian optimization|David Alcaraz; Gaia Caruso; Andrea Guala; Lydia Dux-Santoy; Gisela Teixidó-Turá; José F. Rodríguez-Palomares; Miguel A. Martínez; Estefanía Peña
 139996|Validation of the kinematic and dynamic accuracy of a depth-camera-based telerehabilitation System|Sergi Riera; Mireia Beringues; Carles Margelí; Mohanad Harba; Jordi Torner; Gil Serrancolí`)]}),
   I("v6","14:50","15:00","plenary","Ceremonia de clausura",{room:"capella"}),
-  I("v7","15:00","16:30","break","Almuerzo de clausura",{open:true,meta:"Lugar por determinar: se anunciará el mismo día. Sigue las indicaciones que encontrarás en la universidad."}),
+  I("v7","15:00","16:30","break","Almuerzo de clausura",{open:true,room:"enginy",meta:"En la Plaça de l'Enginy, en la planta baja de la ETSEIB."}),
   I("v8","17:00","19:00","general","Visita turística",{open:true,ext:"pedralbes",meta:"Punto de encuentro: delante de la puerta principal de los Jardines del Palau Reial de Pedralbes, a la altura del metro Palau Reial (L3)."})
  ]}
 };
